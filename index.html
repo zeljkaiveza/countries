@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Where in the world?</h1>
+        <div class="switchThemeSection">
+            <img src="./Assets/moon-outline.svg" class="switchLogo" alt="Moon">
+            <button class="themeBtn">Dark Mode</button>
+        </div>
+    </header>
+    <main>
+        <div class="searchContainer">
+            <div class="searchInput">
+                <img class="searchLogo" src="https://cdn-icons-png.flaticon.com/512/2811/2811806.png" alt="">
+                <input class="searchCountryInput" type="text" placeholder="Search for a country">
+            </div>
+            <div class="filter">
+                <div class="filterByRegion">Filter by region</div>
+                <ul class="dropdownListRegion">
+                    <li class="regionItem" id="asia">Asia</li>
+                    <li class="regionItem" id="europe">Europe</li>
+                    <li class="regionItem" id="africa">Africa</li>
+                    <li class="regionItem" id="americas">America</li>
+                    <li class="regionItem" id="oceania">Oceania</li>
+                    <li class="regionItem" id="antarctic">Antarctic</li>
+                </ul>
+            </div>
+        </div>
+        <div class="countriesContainer"></div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>

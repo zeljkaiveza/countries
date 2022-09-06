@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    font-size: 24px;
+}
+
+.switchThemeSection{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.switchLogo{
+    width: 20px;
+    transform: rotate(20deg);
+}
+
+.themeBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+main{
+    margin: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.searchContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.searchInput{
+    display: flex;
+    gap: 15px;
+    background-color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.searchInput > input{
+    border: none;
+    width: 400px;
+    font-size: 15px;
+    outline: none;
+    background-color: transparent;
+}
+
+.searchLogo{
+    width: 25px;
+}
+
+.filter{
+    position: relative;
+    cursor: pointer;
+}
+
+.filterByRegion{
+    background-color: white;
+    padding: 10px 30px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdownListRegion{
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    top: 43px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: none;
+}
+
+.dropdownListRegion > li {
+    padding: 10px;
+}
+
+.dropdownListRegion > li:hover {
+    background-color: hsl(0, 1%, 56%);
+    color: white;
+}
+
+.countriesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.imageContainer{
+    height: 175px;
+}
+
+.image{
+    width: 245px;
+    border-radius: 5px 5px 0px 0px;
+    max-height: 175px;
+}
+
+.singleContainer{
+    background-color: white;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    padding: 20px;
+    max-width: 245px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.name{
+    margin-bottom: 15px;
+}
+
+.bold{
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.nonBold{
+    font-weight: normal;
+}
+
+/* dark mode */
+
+.header-darkMode{
+    background-color: hsl(209, 23%, 22%);
+}
+
+.title-darkMode{
+    color: hsl(0, 0%, 100%);
+}
+
+.themeBtn-darkMode{
+    color: hsl(0, 0%, 100%);
+}
+
+.body-darkMode{
+    background-color: hsl(207, 26%, 17%);
+}
+
+.searchInput-darkMode{
+    background-color: hsl(209, 23%, 22%);
+}
+
+.searchCountryInput-darkMode{
+    color: hsl(0, 0%, 98%);
+}
+
+.searchCountryInput-darkMode::placeholder{
+    color:hsl(0, 0%, 98%);
+}
+
+.filterByRegion-darkMode{
+    background-color: hsl(209, 23%, 22%);
+    color:hsl(0, 0%, 98%);
+}
+
+.dropdownListRegion-darkMode{
+    background-color: hsl(209, 23%, 22%);
+}
+
+.dropdownListRegion-darkMode > li{
+    color:hsl(0, 0%, 100%);
+}
+
+.dropdownListRegion-darkMode > li:hover{
+    background-color: hsl(207, 26%, 17%);
+}
+
+.singleContainer-darkMode{
+    background-color: hsl(209, 23%, 22%);
+    color:hsl(0, 0%, 100%);
+}
+
+
+
+
+

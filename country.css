@@ -1,0 +1,187 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.title{
+    font-size: 24px;
+}
+
+.switchThemeSection{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.switchLogo{
+    width: 20px;
+    transform: rotate(20deg);
+}
+
+.themeBtn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+main{
+    height: calc(100vh - 62px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.backButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.countryContainer{
+    display: flex;
+    gap: 80px;
+}
+
+
+.flag{
+    height: 300px;
+    width: 400px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.name{
+    letter-spacing: 1px;
+}
+
+.infoInfo{
+    display: flex;
+    gap: 100px;
+}
+
+.leftInfo, .rightInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.infoBold{
+    font-weight: bold;
+}
+
+.nonBold{
+    font-weight:lighter;
+}
+
+.borders{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.countryButtons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 500px;
+}
+
+.borderCountry{
+    padding: 7px 10px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+}
+
+.snippet{
+    position: absolute;
+    top: 33px;
+    left: -5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    width:max-content;
+    display: none;
+    z-index: 1;
+}
+
+.header-darkMode{
+    background-color: hsl(209, 23%, 22%);
+}
+
+.title-darkMode{
+    color: hsl(0, 0%, 100%);
+}
+
+.themeBtn-darkMode{
+    color: hsl(0, 0%, 100%);
+}
+
+.body-darkMode{
+    background-color: hsl(207, 26%, 17%);
+}
+
+.backButton-darkMode{
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+}
+
+.countryContainer-darkMode{
+    color: hsl(0, 0%, 98%);
+}
+
+.borderCountry-darkMode{
+    background-color: hsl(209, 23%, 22%);
+    color: white;
+}
+
+.snippet-darkMode{
+    background-color: hsl(209, 23%, 22%);
+}
+
+
+
+
