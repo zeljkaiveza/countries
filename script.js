@@ -1,158 +1,101 @@
-window.addEventListener("load", fetchData)
-const main = document.querySelector("main")
-const body = document.querySelector("body")
-const header = document.querySelector("header")
-const title = document.querySelector(".title")
-const switchTheme = document.querySelector(".switchThemeSection")
-const switchLogo = document.querySelector(".switchLogo")
-const themeBtn = document.querySelector(".themeBtn")
-const searchContainer = document.querySelector(".searchInput")
-const countriesContainer = document.querySelector(".countriesContainer")
-const filter = document.querySelector(".filter")
-const filterByRegion = document.querySelector(".filterByRegion")
-const dropDownList = document.querySelector(".dropdownListRegion")
-const regionItems = document.querySelectorAll(".regionItem")
-const search = document.querySelector(".searchCountryInput")
-const number = document.querySelector(".number")
-searchLog = document.querySelector(".searchLogo")
-let light;
-
-if(localStorage.light === undefined){
-    localStorage.setItem("light", true)
-    light = JSON.parse(localStorage.light)
-}else {
-    light = JSON.parse(localStorage.light)    
-}
-
-if(light === false){
-    toggleTheme()
-}
+let body = document.querySelector(".body")
+let toggleThemeBtn = document.querySelector(".header__toggle-theme-btn")
+let cardsContainer = document.querySelector(".main__cards-container")
+let searchInput = document.querySelector(".main__search-input")
+let theme;
+let filter;
 
 
-filter.addEventListener("mouseover", () =>{
-    dropDownList.style.display = "block"
-})
-
-filter.addEventListener("mouseout", () => {
-    dropDownList.style.display = "none"
-})
-
-search.addEventListener("input", ()=>{
-    if(search.value != ""){
-        search.value = search.value.toLowerCase()
-        fetchCountry(search.value)        
-    }else{
-        fetchData()
+//setting the theme value on local storage
+if(localStorage.getItem("theme")){
+    theme = JSON.parse(localStorage.getItem("theme"))
+    if(theme === false){
+        body.classList.add("body--dark-theme")
+        changeThemeBtnAppearance()
     }
-})
-
-function fetchCountry(input){
-    fetch(`https://restcountries.com/v2/name/${input}`)
-    .then((res) => res.json())
-    .then((res) => createCards(res))
+}else{
+    localStorage.setItem("theme", true) 
 }
 
-regionItems.forEach(e => {
-    e.addEventListener("click", () =>{
-        countriesContainer.innerHTML = ""
-        fetch(`https://restcountries.com/v2/region/${e.id}`)
-        .then((res) => res.json())
-        .then((res) => createCards(res))
-    })
-})
 
-function fetchData(){
-    fetch("https://restcountries.com/v2/all")
-    .then((res) => res.json())
-    .then((res) => createCards(res))
+function fetchCountries(endpoint, keyword){
+    fetch(`https://restcountries.com/v2/${endpoint}/${keyword}`)
+    .then(result => result.json())
+    .then(result => createCards(result))
 }
 
 function createCards(data){
-    data.sort((a, b) => {
-        return b.population - a.population
+    cardsContainer.innerHTML = ""
+
+    data.sort(function(a, b){
+       return b.population - a.population
     })
 
-    countriesContainer.innerHTML = ""
-    data.forEach((e, i)=> {
+    data.forEach(e => {
         let singleContainer = document.createElement("a")
-        let imageContainer = document.createElement("div")
-        let image = document.createElement("img")
-        let infoContainer = document.createElement("div")
-        let name = document.createElement("h3")
-        let population = document.createElement("p")
-        let populationInfo = document.createElement("span")
-        let region = document.createElement("p")
-        let regionInfo = document.createElement("span")
-        let capital = document.createElement("p")
-        let capitalInfo = document.createElement("span")
-
-        singleContainer.classList.add("singleContainer")
+        cardsContainer.append(singleContainer)
+        singleContainer.classList.add("main__single-container")
         singleContainer.setAttribute("href", "./country.html")
-        singleContainer.addEventListener("click", () => {
-            localStorage.setItem("alphaCode", e.alpha3Code)
+        singleContainer.innerHTML = `
+            <div class="main__flag">
+                <img src="${e.flags.png}"/>
+            </div>
+            <div class="main__info-container">
+                <h3 class="main__name-item">${e.name}</h3>
+                <p class="main__info-item--bold">Population: <span class="main__info-item--non-bold">${Number(e.population).toLocaleString()}</span></p>
+                <p class="main__info-item--bold">Region: <span class="main__info-item--non-bold">${e.subregion}</span></p>
+                <p class="main__info-item--bold">Capital: <span class="main__info-item--non-bold">${e.capital ? e.capital : "N/A"}</span></p>
+            </div>
+        `;
+        singleContainer.addEventListener("click", ()=>{
+            localStorage.setItem("transferred", e.alpha3Code)
         })
-        imageContainer.classList.add("imageContainer")
-        image.classList.add("image")
-        image.setAttribute("src", e.flags.svg)
-        infoContainer.classList.add("infoContainer")
-        name.classList.add("name")
-        name.innerText = e.name
-        population.innerText = "Population: "
-        populationInfo.innerText = Number(e.population).toLocaleString()
-        region.innerText = "Region: "
-        regionInfo.innerText = e.region
-        capital.innerText = "Capital: "
-        if(e.capital == undefined) capitalInfo.innerText = "N/A"
-        else capitalInfo.innerText = e.capital
-        population.classList.add("bold")
-        region.classList.add("bold")
-        capital.classList.add("bold")
-        populationInfo.classList.add("nonBold")
-        regionInfo.classList.add("nonBold")
-        capitalInfo.classList.add("nonBold")
-        
-        countriesContainer.append(singleContainer)
-        singleContainer.append(imageContainer, infoContainer)
-        imageContainer.append(image)
-        infoContainer.append(name, population, region, capital)
-        population.append(populationInfo)
-        region.append(regionInfo)
-        capital.append(capitalInfo)
-
-        if(light == false) singleContainer.classList.add("singleContainer-darkMode")
-        else singleContainer.classList.remove("singleContainer-darkMode")
     })
+    
 
 }
 
-switchTheme.addEventListener("click", ()=>{
-    light = !light
-    localStorage.setItem("light", light)
-    toggleTheme()
+function changeTheme(){
+    theme = !theme
+    localStorage.setItem("theme", theme)
+    body.classList.toggle("body--dark-theme")
+    changeThemeBtnAppearance()
+}
+
+function changeThemeBtnAppearance(){
+    let img = document.querySelector(".header__toggle-theme-img");
+    let text = document.querySelector(".header__toggle-theme-btn-text")
+    theme ? img.src = "./Assets/moon.svg" : img.src = "./Assets/sun.svg"
+    theme ? text.innerText = "Dark mode" : text.innerText = "Light mode" 
+}
+
+window.addEventListener("load", ()=>{
+    fetchCountries("all", "")
 })
 
-function toggleTheme(){
-    body.classList.toggle("body-darkMode")
-    header.classList.toggle("header-darkMode")
-    title.classList.toggle("title-darkMode")
-    themeBtn.classList.toggle("themeBtn-darkMode")
-    searchContainer.classList.toggle("searchInput-darkMode")
-    search.classList.toggle("searchCountryInput-darkMode")
-    filterByRegion.classList.toggle("filterByRegion-darkMode")
-    dropDownList.classList.toggle("dropdownListRegion-darkMode")
+toggleThemeBtn.addEventListener("click", ()=>{
+    changeTheme()
+})
 
-    if(light == true){
-        switchLogo.setAttribute("src", "./Assets/moon-outline.svg")
-        themeBtn.innerText = "Dark mode"
-    }else{
-        switchLogo.setAttribute("src", "./Assets/icon-sun.svg")
-        themeBtn.innerText = "Light mode"
-    }
-    
-    let countries = document.querySelectorAll(".singleContainer")
-    
-    countries.forEach(e =>{
-        if(light == false) e.classList.add("singleContainer-darkMode")
-        else e.classList.remove("singleContainer-darkMode")
+document.querySelector(".main__dropdown-container").addEventListener("mouseover", ()=>{
+    document.querySelector(".main__dropdown-list").classList.remove("main__dropdown-list--hidden")
+})
+
+document.querySelector(".main__dropdown-container").addEventListener("mouseout", ()=>{
+    document.querySelector(".main__dropdown-list").classList.add("main__dropdown-list--hidden")
+})
+
+document.querySelectorAll(".main__dropdown-list-item").forEach(element => {
+    element.addEventListener("click", ()=>{
+        filter = element.id;
+        fetchCountries("region", filter)
     })
-}
+})
+
+searchInput.addEventListener("input", (event)=>{
+    if(event.target.value){
+        fetchCountries("name", event.target.value)
+    }else{
+        fetchCountries("all", "")
+    }
+})

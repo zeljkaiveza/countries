@@ -4,36 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World</title>
+    <title>Countries</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <header>
-        <h1 class="title">Where in the world?</h1>
-        <div class="switchThemeSection">
-            <img src="./Assets/moon-outline.svg" class="switchLogo" alt="Moon">
-            <button class="themeBtn">Dark Mode</button>
-        </div>
+<body class="body">
+    <header class="header">
+        <h2 class="header__title"><a href="./index.html">Where in the world?</a></h2>
+        <button class="header__toggle-theme-btn">
+            <img class="header__toggle-theme-img" src="./Assets/moon.svg" alt="">
+            <p class="header__toggle-theme-btn-text">Dark Mode</p>
+        </button>
     </header>
-    <main>
-        <div class="searchContainer">
-            <div class="searchInput">
-                <img class="searchLogo" src="https://cdn-icons-png.flaticon.com/512/2811/2811806.png" alt="">
-                <input class="searchCountryInput" type="text" placeholder="Search for a country">
-            </div>
-            <div class="filter">
-                <div class="filterByRegion">Filter by region</div>
-                <ul class="dropdownListRegion">
-                    <li class="regionItem" id="asia">Asia</li>
-                    <li class="regionItem" id="europe">Europe</li>
-                    <li class="regionItem" id="africa">Africa</li>
-                    <li class="regionItem" id="americas">America</li>
-                    <li class="regionItem" id="oceania">Oceania</li>
-                    <li class="regionItem" id="antarctic">Antarctic</li>
+    <main class="main">
+        <div class="main__filter-container">
+            <form action="" class="main__search-bar">
+                <button><img src="./Assets/black-magnifier.png" alt=""></button>
+                <input type="text" placeholder="Search for a country" class="main__search-input">
+            </form>
+            <div class="main__dropdown-container">
+                <p class="main__dropdown-title">Filter by region</p>
+                <ul class="main__dropdown-list main__dropdown-list--hidden">
+                    <li class="main__dropdown-list-item" id="asia">Asia</li>
+                    <li class="main__dropdown-list-item" id="europe">Europe</li>
+                    <li class="main__dropdown-list-item" id="africa">Africa</li>
+                    <li class="main__dropdown-list-item" id="americas">America</li>
+                    <li class="main__dropdown-list-item" id="oceania">Oceania</li>
+                    <li class="main__dropdown-list-item" id="antarctic">Antarctic</li>
                 </ul>
             </div>
         </div>
-        <div class="countriesContainer"></div>
+        <div class="main__cards-container"></div>
     </main>
     <script src="./script.js"></script>
 </body>
