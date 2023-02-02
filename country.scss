@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --body-background: hsl(0, 0%, 98%);
+    --text-color: hsl(200, 15%, 8%);
+    --element-background: white;
+}
+
+.body--dark-theme{
+    --body-background: hsl(207, 26%, 17%);
+    --text-color: white;
+    --element-background: hsl(209, 23%, 22%);
+}
+
+body{
+    min-height: 100vh;
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: var(--body-background);
+    color: var(--text-color);
+}
+
+a, input, button, ::placeholder{
+    color: var(--text-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 30px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+    background-color: var(--element-background);
+    .header__toggle-theme-btn{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        .header__toggle-theme-img{
+            width: 20px;
+        }
+        .header__toggle-theme-btn-text{
+            font-size: 15px;
+        }
+    }
+}
+
+.main{
+    padding: 50px 15px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    .main__back-btn{
+        background-color: var(--element-background);
+        padding: 8px 30px;
+        box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+    .main__country-container{
+        display: flex;
+        gap: 50px;
+        width: 100%;
+        .main__flag{
+            width: 40%;
+            background-size: cover;
+        }
+        .main__info-container{
+            align-self: center;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            p{
+                font-weight: 800;
+            }
+            span{
+                font-weight: 300;
+            }
+            .main__sub-info-container{
+                display: flex;
+                gap: 90px;
+            }
+            .main__borders-container{
+                display: flex;
+                gap: 10px;
+                .main__borders-items{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    .main__border-item{
+                        box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+                        padding: 2px 5px;
+                        border-radius: 3px;
+                        font-size: 12px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1050px){
+    .header{
+        padding: 40px 20px;
+        .header__title{
+            font-size: 1.25rem;
+        }
+        .header__toggle-theme-btn{
+            gap: 5px;
+            .header__toggle-theme-img{
+                width: 15px;
+            }
+            .header__toggle-theme-btn-text{
+                font-size: 13px;
+            }
+        }
+    }
+    .main{
+        padding: 50px 100px 80px 100px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        .main__back-btn{
+            padding: 5px 10px;
+        }
+        .main__country-container{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 100%;
+            .main__flag{
+                width: 100%;
+            }
+            .main__info-container{
+                width: 100%;
+                flex-direction: column;
+                gap: 20px;
+                .main__sub-info-container{
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                .main__borders-container{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
