@@ -103,6 +103,7 @@ button {
 }
 .main .main__cards-container .main__single-container .main__info-container .main__name-item {
   margin-bottom: 10px;
+  letter-spacing: 1.2px;
 }
 .main .main__cards-container .main__single-container .main__info-container .main__info-item--bold {
   font-weight: 600;
@@ -160,7 +161,7 @@ button {
   visibility: hidden;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
   .header {
     padding: 40px 20px;
   }

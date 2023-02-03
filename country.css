@@ -89,7 +89,6 @@ button {
 }
 .main .main__country-container .main__flag {
   width: 40%;
-  background-size: cover;
 }
 .main .main__country-container .main__info-container {
   align-self: center;
@@ -108,6 +107,11 @@ button {
   display: flex;
   gap: 90px;
 }
+.main .main__country-container .main__info-container .main__sub-info-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .main .main__country-container .main__info-container .main__borders-container {
   display: flex;
   gap: 10px;
@@ -125,7 +129,34 @@ button {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1100px) {
+  .main {
+    padding: 50px 15px 80px 30px;
+  }
+  .main .main__country-container {
+    gap: 25px;
+  }
+  .main .main__country-container .main__flag {
+    width: 45%;
+  }
+  .main .main__country-container h2 {
+    font-size: 17px;
+  }
+  .main .main__country-container p, .main .main__country-container span {
+    font-size: 13.5px;
+  }
+  .main .main__country-container .main__info-container {
+    width: 100%;
+    gap: 10px;
+  }
+  .main .main__country-container .main__info-container .main__sub-info-container {
+    gap: 50px;
+  }
+  .main .main__country-container .main__info-container .main__sub-info-container div {
+    gap: 3px;
+  }
+}
+@media only screen and (max-width: 770px) {
   .header {
     padding: 40px 20px;
   }
@@ -142,7 +173,7 @@ button {
     font-size: 13px;
   }
   .main {
-    padding: 50px 100px 80px 100px;
+    padding: 30px 100px 80px 100px;
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
@@ -164,9 +195,18 @@ button {
     flex-direction: column;
     gap: 20px;
   }
+  .main .main__country-container .main__info-container h2 {
+    font-size: 22px;
+  }
+  .main .main__country-container .main__info-container p, .main .main__country-container .main__info-container span {
+    font-size: 16px;
+  }
   .main .main__country-container .main__info-container .main__sub-info-container {
     flex-direction: column;
     gap: 20px;
+  }
+  .main .main__country-container .main__info-container .main__sub-info-container div {
+    gap: 5px;
   }
   .main .main__country-container .main__info-container .main__borders-container {
     flex-direction: column;

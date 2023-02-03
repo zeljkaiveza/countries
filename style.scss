@@ -95,6 +95,7 @@ button{
                 padding: 20px 5px 50px 15px;
                 .main__name-item{
                     margin-bottom: 10px;
+                    letter-spacing: 1.2px;
                 }
                 .main__info-item--bold{
                     font-weight: 600;
@@ -156,10 +157,8 @@ button{
     }
 }
 
-
-
 //tablet and mobile
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     .header{
         padding: 40px 20px;
         .header__title{

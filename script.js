@@ -27,9 +27,9 @@ function fetchCountries(endpoint, keyword){
 function createCards(data){
     cardsContainer.innerHTML = ""
 
-    data.sort(function(a, b){
-       return b.population - a.population
-    })
+    // data.sort(function(a, b){
+    //    return b.population - a.population
+    // })
 
     data.forEach(e => {
         let singleContainer = document.createElement("a")
