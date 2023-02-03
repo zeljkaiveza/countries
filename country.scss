@@ -180,7 +180,7 @@ button{
             gap: 50px;
             width: 100%;
             .main__flag{
-                width: 100%;
+                width: 85%;
             }
             .main__info-container{
                 width: 100%;
@@ -201,6 +201,7 @@ button{
                 }
                 .main__borders-container{
                     flex-direction: column;
+                    width: 80px;
                 }
             }
         }

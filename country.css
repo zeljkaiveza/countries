@@ -188,7 +188,7 @@ button {
     width: 100%;
   }
   .main .main__country-container .main__flag {
-    width: 100%;
+    width: 85%;
   }
   .main .main__country-container .main__info-container {
     width: 100%;
@@ -210,5 +210,6 @@ button {
   }
   .main .main__country-container .main__info-container .main__borders-container {
     flex-direction: column;
+    width: 80px;
   }
 }/*# sourceMappingURL=country.css.map */
