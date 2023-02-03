@@ -210,6 +210,6 @@ button {
   }
   .main .main__country-container .main__info-container .main__borders-container {
     flex-direction: column;
-    width: 80px;
+    width: 80%;
   }
 }/*# sourceMappingURL=country.css.map */
