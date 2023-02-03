@@ -8,4 +8,4 @@ Users are able to:
 - click through to the border countries on the detail page
 - toggle the colour scheme between light and dark mode
 
-This project is only desktop responsive.
+This project is only desktop and mobile responsive.
