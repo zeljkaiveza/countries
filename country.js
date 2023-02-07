@@ -1,9 +1,9 @@
-let body = document.querySelector(".body")
-let toggleThemeBtn = document.querySelector(".header__toggle-theme-btn")
+let body = document.querySelector(".body");
+let toggleThemeBtn = document.querySelector(".header__toggle-theme-btn");
 let theme;
 let data;
-let countryContainer = document.querySelector(".main__country-container")
-let borders = []
+let countryContainer = document.querySelector(".main__country-container");
+let borders = [];
 
 //setting the theme value on local storage
 if(localStorage.getItem("theme")){

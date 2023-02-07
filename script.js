@@ -4,7 +4,7 @@ let cardsContainer = document.querySelector(".main__cards-container")
 let searchInput = document.querySelector(".main__search-input")
 let theme;
 let filter;
-
+console.log(document.querySelector(".header__toggle-theme-img"));
 
 //setting the theme value on local storage
 if(localStorage.getItem("theme")){
@@ -14,7 +14,7 @@ if(localStorage.getItem("theme")){
         changeThemeBtnAppearance()
     }
 }else{
-    localStorage.setItem("theme", true) 
+    localStorage.setItem("theme", true)
 }
 
 
@@ -26,10 +26,6 @@ function fetchCountries(endpoint, keyword){
 
 function createCards(data){
     cardsContainer.innerHTML = ""
-
-    // data.sort(function(a, b){
-    //    return b.population - a.population
-    // })
 
     data.forEach(e => {
         let singleContainer = document.createElement("a")
