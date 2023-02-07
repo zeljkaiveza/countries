@@ -15,6 +15,7 @@ if(localStorage.getItem("theme")){
     }
 }else{
     localStorage.setItem("theme", true)
+    theme = true
 }
 
 
@@ -52,7 +53,10 @@ function createCards(data){
 }
 
 function changeTheme(){
+    console.log("usao u temu");
+    console.log(theme);
     theme = !theme
+    console.log(theme);
     localStorage.setItem("theme", theme)
     body.classList.toggle("body--dark-theme")
     changeThemeBtnAppearance()
@@ -71,6 +75,7 @@ window.addEventListener("load", ()=>{
 
 toggleThemeBtn.addEventListener("click", ()=>{
     changeTheme()
+    console.log("radi");
 })
 
 document.querySelector(".main__dropdown-container").addEventListener("mouseover", ()=>{
