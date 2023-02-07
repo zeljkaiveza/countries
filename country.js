@@ -13,7 +13,8 @@ if(localStorage.getItem("theme")){
         changeThemeBtnAppearance()
     }
 }else{
-    localStorage.setItem("theme", true) 
+    localStorage.setItem("theme", true)
+    theme = true
 }
 
 window.addEventListener("load", ()=>{
